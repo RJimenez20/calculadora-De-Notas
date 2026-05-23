@@ -28,5 +28,8 @@ public class Estudiante {
         }
         return suma / notas.size();
     }
+
+    public String getNombre() { return nombre;}
+    public List<Double> getNotas(){ return notas;}
 }
 
