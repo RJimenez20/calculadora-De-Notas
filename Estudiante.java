@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Estudiante {
     private String nombre;
-    private List<double> notas;
+    private List<Double> notas;
     //Constructor
     public Estudiante(String nombre){
         this.nombre = nombre;
@@ -16,6 +16,17 @@ public class Estudiante {
             );
         }
         notas.add(nota);
+    }
+
+    public double calcularPromedio(){
+        if (notas.isEmpty()){
+            throw new NotaInvalidaException("El estudiante no tiene notas registradas.");
+        }
+        double suma = 0;
+        for (double nota : notas){
+            suma += nota;
+        }
+        return suma / notas.size();
     }
 }
 
